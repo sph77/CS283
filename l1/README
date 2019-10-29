@@ -1,0 +1,84 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+L1: Pointers and Dynamic Memory
+
+Programs:
+p1.c - array of 10 integers using int* pointer and malloc
+p2.c - array of 10 strings using char** pointer and malloc
+p3.c - implementation of bubblesort for an int array, using pointer arithmetic
+p4.c - implementation of bubblesort for a linked list, done by swapping node pointers
+p5.c - implementation of ArrayList struct, functions, and timing different growth methods
+
+NOTE: For p5.c, generally doubling the size of the array is faster than
+reallocating one additional slot. Doubling calls realloc() less times overall,
+and realloc() is an expensive operation (it has to find available memory, free
+it, and then copy all of the data over). realloc() is an expensive operation,
+so this result is not surprising.
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc and run through terminal, optimally with similar environment
+information as listed above.
+
+Ex: How to run problem 1 (this works for any of the p#.c files)
+gcc -op1.o p1.c
+./p1.o
+
+NOTE: The timing of the two functions for p5 is done within the script itself,
+when you run it. Here's an example output when I run p5:
+
+adding one more element per realloc took 0.002298 seconds for 100000 elements
+doubling the size per realloc took 0.000743 seconds for 100000 elements
+
+IMPORTANT:
+The Makefile provides some helpful commands to
+get started. Make sure when running make that your current directory matches
+the current directory of the Makefile.
+
+Enter "make p#" to build and test a specific problem, ex: "make p1" will test 
+problem 1. "make all" will build and run all five problems. Use "make clean"
+to remove all of the object (.o) files. "make view" will open up all of the
+source code in a pager.
+
+p5.o does take in an optional parameter N, with N being the size of the
+initial ArrayList. Set N in the make command, ex: make N=5 p5.
+
+Testing:
+Testing consisted of writing some general use cases in int main() and using
+some printf statements occasionally to ensure that the program flow was being
+executed correctly. For problems 3, 4, and 5, debugging was done through the 
+use of gdb.
+
+Difficulties:
+Problems 1 and 2 were fairly straightforward. Problem 3 was not hard but there
+was challenge in trying to choose a sorting algorithm that I could implement
+for both an array and a linked list.
+
+Problem 4 was the most difficult problem. It took a lot of practice to figure
+out how to rewrite the array logic to work for linked list pointers, as
+changing only the pointers (and not the individual node data) led to many
+issues. Some of these issues include the following:
+- Iterating through the list while modifying the iteration order
+- Swapping nodes without running into an infinite loop
+- Memory management, referencing allocated memory
+- Limitations of a singly-linked list (and not doubly)
+- Keeping track of the head node
+
+Problem 5 was not that bad, the hard part was figuring out functionality but
+implementation-wise, there were not many issues. Problem 5 runs the timing
+within the script itself, but generally doubling the size of the array is
+faster than increasing it by 1 per element. This is not surprising to me as
+resizing an array is an expensive operation, so doubling is faster as it
+reduces the total number of resizes required.
+
+Suggestions for improvement:
+Problems 1, 2, and 5 are good. Maybe give a hint in problem 3 as to what
+sorting algorithm you should use. I initially considered quicksort or
+mergesort, but then realized that these would both be very difficult to write
+and test for problem 4, mainly due to the limitation of swapping the node 
+pointers and not the individual data. 

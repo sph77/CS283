@@ -1,0 +1,17 @@
+HTTP/1.1 302 Found
+Date: Tue, 20 Aug 2019 22:11:24 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Location: https://www.cs.drexel.edu/~kschmidt/
+Content-Length: 303
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="https://www.cs.drexel.edu/~kschmidt/">here</a>.</p>
+<hr>
+<address>Apache/2.4.29 (Ubuntu) Server at www.cs.drexel.edu Port 80</address>
+</body></html>
+

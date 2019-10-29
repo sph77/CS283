@@ -1,0 +1,287 @@
+GAME 1: Parent placed X at position 15, 8
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+        X       
+----------------
+GAME 1: Child placed O at position 15, 0
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O       X       
+----------------
+GAME 1: Parent placed X at position 15, 7
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      XX       
+----------------
+GAME 1: Child placed O at position 15, 14
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      XX     O 
+----------------
+GAME 1: Parent placed X at position 15, 9
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      XXX    O 
+----------------
+GAME 1: Child placed O at position 15, 4
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O   O  XXX    O 
+----------------
+GAME 1: Parent placed X at position 15, 15
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O   O  XXX    OX
+----------------
+GAME 1: Child placed O at position 14, 0
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O               
+O   O  XXX    OX
+----------------
+GAME 1: Parent placed X at position 15, 12
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O               
+O   O  XXX  X OX
+----------------
+GAME 1: Child placed O at position 14, 7
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O        
+O   O  XXX  X OX
+----------------
+GAME 1: Parent placed X at position 14, 15
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O       X
+O   O  XXX  X OX
+----------------
+GAME 1: Child placed O at position 15, 5
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O       X
+O   OO XXX  X OX
+----------------
+GAME 1: Parent placed X at position 14, 14
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O      XX
+O   OO XXX  X OX
+----------------
+GAME 1: Child placed O at position 15, 10
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O      XX
+O   OO XXXO X OX
+----------------
+GAME 1: Parent placed X at position 15, 6
+----------------
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+O      O      XX
+O   OOXXXXO X OX
+----------------
+GAME 1: Parent wins!
+Child 10122 terminated with exit status 0

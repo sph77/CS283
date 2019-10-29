@@ -1,0 +1,910 @@
+GAME 1: Parent placed X at position 7, 4
+--------
+        
+        
+        
+        
+        
+        
+        
+    X   
+--------
+GAME 2: Parent placed X at position 7, 3
+--------
+        
+        
+        
+        
+        
+        
+        
+   X    
+--------
+GAME 3: Parent placed X at position 7, 3
+--------
+        
+        
+        
+        
+        
+        
+        
+   X    
+--------
+GAME 4: Parent placed X at position 7, 3
+--------
+        
+        
+        
+        
+        
+        
+        
+   X    
+--------
+GAME 1: Child placed O at position 7, 2
+--------
+        
+        
+        
+        
+        
+        
+        
+  O X   
+--------
+GAME 1: Parent placed X at position 6, 4
+--------
+        
+        
+        
+        
+        
+        
+    X   
+  O X   
+--------
+GAME 2: Child placed O at position 7, 2
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX    
+--------
+GAME 2: Parent placed X at position 7, 5
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX X  
+--------
+GAME 3: Child placed O at position 7, 2
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX    
+--------
+GAME 3: Parent placed X at position 7, 7
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX   X
+--------
+GAME 4: Child placed O at position 7, 2
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX    
+--------
+GAME 4: Parent placed X at position 7, 7
+--------
+        
+        
+        
+        
+        
+        
+        
+  OX   X
+--------
+GAME 1: Child placed O at position 7, 0
+--------
+        
+        
+        
+        
+        
+        
+    X   
+O O X   
+--------
+GAME 1: Parent placed X at position 7, 3
+--------
+        
+        
+        
+        
+        
+        
+    X   
+O OXX   
+--------
+GAME 2: Child placed O at position 7, 0
+--------
+        
+        
+        
+        
+        
+        
+        
+O OX X  
+--------
+GAME 2: Parent placed X at position 6, 5
+--------
+        
+        
+        
+        
+        
+        
+     X  
+O OX X  
+--------
+GAME 3: Child placed O at position 7, 0
+--------
+        
+        
+        
+        
+        
+        
+        
+O OX   X
+--------
+GAME 3: Parent placed X at position 6, 7
+--------
+        
+        
+        
+        
+        
+        
+       X
+O OX   X
+--------
+GAME 4: Child placed O at position 7, 0
+--------
+        
+        
+        
+        
+        
+        
+        
+O OX   X
+--------
+GAME 4: Parent placed X at position 6, 7
+--------
+        
+        
+        
+        
+        
+        
+       X
+O OX   X
+--------
+GAME 1: Child placed O at position 7, 7
+--------
+        
+        
+        
+        
+        
+        
+    X   
+O OXX  O
+--------
+GAME 1: Parent placed X at position 6, 3
+--------
+        
+        
+        
+        
+        
+        
+   XX   
+O OXX  O
+--------
+GAME 2: Child placed O at position 7, 7
+--------
+        
+        
+        
+        
+        
+        
+     X  
+O OX X O
+--------
+GAME 2: Parent placed X at position 6, 3
+--------
+        
+        
+        
+        
+        
+        
+   X X  
+O OX X O
+--------
+GAME 3: Child placed O at position 5, 7
+--------
+        
+        
+        
+        
+        
+       O
+       X
+O OX   X
+--------
+GAME 3: Parent placed X at position 6, 3
+--------
+        
+        
+        
+        
+        
+       O
+   X   X
+O OX   X
+--------
+GAME 4: Child placed O at position 5, 7
+--------
+        
+        
+        
+        
+        
+       O
+       X
+O OX   X
+--------
+GAME 4: Parent placed X at position 6, 3
+--------
+        
+        
+        
+        
+        
+       O
+   X   X
+O OX   X
+--------
+GAME 1: Child placed O at position 6, 7
+--------
+        
+        
+        
+        
+        
+        
+   XX  O
+O OXX  O
+--------
+GAME 1: Parent placed X at position 7, 5
+--------
+        
+        
+        
+        
+        
+        
+   XX  O
+O OXXX O
+--------
+GAME 2: Child placed O at position 6, 7
+--------
+        
+        
+        
+        
+        
+        
+   X X O
+O OX X O
+--------
+GAME 2: Parent placed X at position 7, 4
+--------
+        
+        
+        
+        
+        
+        
+   X X O
+O OXXX O
+--------
+GAME 3: Child placed O at position 4, 7
+--------
+        
+        
+        
+        
+       O
+       O
+   X   X
+O OX   X
+--------
+GAME 3: Parent placed X at position 7, 5
+--------
+        
+        
+        
+        
+       O
+       O
+   X   X
+O OX X X
+--------
+GAME 4: Child placed O at position 4, 7
+--------
+        
+        
+        
+        
+       O
+       O
+   X   X
+O OX   X
+--------
+GAME 4: Parent placed X at position 7, 6
+--------
+        
+        
+        
+        
+       O
+       O
+   X   X
+O OX  XX
+--------
+GAME 1: Child placed O at position 5, 7
+--------
+        
+        
+        
+        
+        
+       O
+   XX  O
+O OXXX O
+--------
+GAME 1: Parent placed X at position 7, 6
+--------
+        
+        
+        
+        
+        
+       O
+   XX  O
+O OXXXXO
+--------
+GAME 1: Parent wins!
+GAME 2: Child placed O at position 5, 7
+--------
+        
+        
+        
+        
+        
+       O
+   X X O
+O OXXX O
+--------
+GAME 2: Parent placed X at position 7, 6
+--------
+        
+        
+        
+        
+        
+       O
+   X X O
+O OXXXXO
+--------
+GAME 2: Parent wins!
+GAME 3: Child placed O at position 3, 7
+--------
+        
+        
+        
+       O
+       O
+       O
+   X   X
+O OX X X
+--------
+GAME 3: Parent placed X at position 2, 7
+--------
+        
+        
+       X
+       O
+       O
+       O
+   X   X
+O OX X X
+--------
+GAME 4: Child placed O at position 3, 7
+--------
+        
+        
+        
+       O
+       O
+       O
+   X   X
+O OX  XX
+--------
+GAME 4: Parent placed X at position 2, 7
+--------
+        
+        
+       X
+       O
+       O
+       O
+   X   X
+O OX  XX
+--------
+GAME 3: Child placed O at position 5, 3
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X   X
+O OX X X
+--------
+GAME 3: Parent placed X at position 6, 5
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X X X
+O OX X X
+--------
+GAME 4: Child placed O at position 5, 3
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X   X
+O OX  XX
+--------
+GAME 4: Parent placed X at position 6, 6
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X  XX
+O OX  XX
+--------
+GAME 3: Child placed O at position 7, 6
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X X X
+O OX XOX
+--------
+GAME 3: Parent placed X at position 6, 6
+--------
+        
+        
+       X
+       O
+       O
+   O   O
+   X XXX
+O OX XOX
+--------
+GAME 4: Child placed O at position 5, 6
+--------
+        
+        
+       X
+       O
+       O
+   O  OO
+   X  XX
+O OX  XX
+--------
+GAME 4: Parent placed X at position 7, 4
+--------
+        
+        
+       X
+       O
+       O
+   O  OO
+   X  XX
+O OXX XX
+--------
+GAME 3: Child placed O at position 5, 6
+--------
+        
+        
+       X
+       O
+       O
+   O  OO
+   X XXX
+O OX XOX
+--------
+GAME 3: Parent placed X at position 6, 2
+--------
+        
+        
+       X
+       O
+       O
+   O  OO
+  XX XXX
+O OX XOX
+--------
+GAME 4: Child placed O at position 4, 6
+--------
+        
+        
+       X
+       O
+      OO
+   O  OO
+   X  XX
+O OXX XX
+--------
+GAME 4: Parent placed X at position 6, 4
+--------
+        
+        
+       X
+       O
+      OO
+   O  OO
+   XX XX
+O OXX XX
+--------
+GAME 3: Child placed O at position 4, 3
+--------
+        
+        
+       X
+       O
+   O   O
+   O  OO
+  XX XXX
+O OX XOX
+--------
+GAME 3: Parent placed X at position 3, 3
+--------
+        
+        
+       X
+   X   O
+   O   O
+   O  OO
+  XX XXX
+O OX XOX
+--------
+GAME 4: Child placed O at position 4, 3
+--------
+        
+        
+       X
+       O
+   O  OO
+   O  OO
+   XX XX
+O OXX XX
+--------
+GAME 4: Parent placed X at position 3, 6
+--------
+        
+        
+       X
+      XO
+   O  OO
+   O  OO
+   XX XX
+O OXX XX
+--------
+GAME 3: Child placed O at position 6, 0
+--------
+        
+        
+       X
+   X   O
+   O   O
+   O  OO
+O XX XXX
+O OX XOX
+--------
+GAME 3: Parent placed X at position 5, 0
+--------
+        
+        
+       X
+   X   O
+   O   O
+X  O  OO
+O XX XXX
+O OX XOX
+--------
+GAME 4: Child placed O at position 6, 0
+--------
+        
+        
+       X
+      XO
+   O  OO
+   O  OO
+O  XX XX
+O OXX XX
+--------
+GAME 4: Parent placed X at position 1, 7
+--------
+        
+       X
+       X
+      XO
+   O  OO
+   O  OO
+O  XX XX
+O OXX XX
+--------
+GAME 3: Child placed O at position 7, 1
+--------
+        
+        
+       X
+   X   O
+   O   O
+X  O  OO
+O XX XXX
+OOOX XOX
+--------
+GAME 3: Parent placed X at position 6, 1
+--------
+        
+        
+       X
+   X   O
+   O   O
+X  O  OO
+OXXX XXX
+OOOX XOX
+--------
+GAME 4: Child placed O at position 7, 1
+--------
+        
+       X
+       X
+      XO
+   O  OO
+   O  OO
+O  XX XX
+OOOXX XX
+--------
+GAME 4: Parent placed X at position 0, 7
+--------
+       X
+       X
+       X
+      XO
+   O  OO
+   O  OO
+O  XX XX
+OOOXX XX
+--------
+GAME 3: Child placed O at position 5, 1
+--------
+        
+        
+       X
+   X   O
+   O   O
+XO O  OO
+OXXX XXX
+OOOX XOX
+--------
+GAME 3: Parent placed X at position 4, 0
+--------
+        
+        
+       X
+   X   O
+X  O   O
+XO O  OO
+OXXX XXX
+OOOX XOX
+--------
+GAME 4: Child placed O at position 6, 1
+--------
+       X
+       X
+       X
+      XO
+   O  OO
+   O  OO
+OO XX XX
+OOOXX XX
+--------
+GAME 4: Parent placed X at position 5, 4
+--------
+       X
+       X
+       X
+      XO
+   O  OO
+   OX OO
+OO XX XX
+OOOXX XX
+--------
+GAME 3: Child placed O at position 5, 5
+--------
+        
+        
+       X
+   X   O
+X  O   O
+XO O OOO
+OXXX XXX
+OOOX XOX
+--------
+GAME 3: Parent placed X at position 3, 0
+--------
+        
+        
+       X
+X  X   O
+X  O   O
+XO O OOO
+OXXX XXX
+OOOX XOX
+--------
+GAME 4: Child placed O at position 7, 5
+--------
+       X
+       X
+       X
+      XO
+   O  OO
+   OX OO
+OO XX XX
+OOOXXOXX
+--------
+GAME 4: Parent placed X at position 2, 6
+--------
+       X
+       X
+      XX
+      XO
+   O  OO
+   OX OO
+OO XX XX
+OOOXXOXX
+--------
+GAME 3: Child placed O at position 5, 2
+--------
+        
+        
+       X
+X  X   O
+X  O   O
+XOOO OOO
+OXXX XXX
+OOOX XOX
+--------
+GAME 3: Parent placed X at position 7, 4
+--------
+        
+        
+       X
+X  X   O
+X  O   O
+XOOO OOO
+OXXX XXX
+OOOXXXOX
+--------
+GAME 4: Child placed O at position 6, 2
+--------
+       X
+       X
+      XX
+      XO
+   O  OO
+   OX OO
+OOOXX XX
+OOOXXOXX
+--------
+GAME 4: Parent placed X at position 6, 5
+--------
+       X
+       X
+      XX
+      XO
+   O  OO
+   OX OO
+OOOXXXXX
+OOOXXOXX
+--------
+GAME 4: Parent wins!
+GAME 3: Child placed O at position 6, 4
+--------
+        
+        
+       X
+X  X   O
+X  O   O
+XOOO OOO
+OXXXOXXX
+OOOXXXOX
+--------
+GAME 3: Parent placed X at position 2, 0
+--------
+        
+        
+X      X
+X  X   O
+X  O   O
+XOOO OOO
+OXXXOXXX
+OOOXXXOX
+--------
+GAME 3: Parent wins!
+Child 10059 terminated with exit status 0
+Child 10060 terminated with exit status 0
+Child 10061 terminated with exit status 0
+Child 10062 terminated with exit status 0

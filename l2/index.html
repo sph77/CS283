@@ -1,0 +1,57 @@
+<html>
+<!--
+  CS 164 Fall 2016
+  Lab 1
+  Name: STEPHEN HANSEN
+  Date: 9/28/2017
+-->
+<head>
+    <title>Steve's Homepage</title>
+	<style>
+	h1 {
+		text-align: center;
+		color: white;
+	}
+	p {
+		text-align: center;
+		color: black;
+	}
+	a {
+		text-align: center;
+		color: red;
+	}
+	body {
+		background-image: url("bg.jpg");
+	}
+	div {
+		text-align: center;
+		margin: auto;
+		border-radius: 25px;
+		border: 2px solid DarkBlue;
+		padding: 10px; 
+		width: 350px;
+		height: 270px; 
+		background-color: LightBlue;
+	}
+	</style>
+	<script src="konami.js"></script>
+	<script>
+	var audio = new Audio('LiftYourself.mp3');
+	var easter_egg = new Konami(function() { audio.play(); });
+	</script>
+</head>
+<body>
+    <h1>
+        Steve Hansen
+    </h1>
+	<div>
+	<p><a href="/~sph77/bio.html">My bio</a></p>
+	<p><a href="/~sph77/help.html">My Course Experience</a></p>
+	<p><a href="/~sph77/schedule.html">My availability</a></p>
+	<p><a href="/~sph77/pokemon.html">Pokemon marketplace</a></p>
+	<p>Switch friend code:</p>
+	<p>SW-5898-3499-2279</p>
+	<p>Donate to my garlicoin using the following address:</p>
+	<p>GaTH5t4Do4w55Ekp1PqvHQDjrPKPj5e185</p>
+</div>
+</html>

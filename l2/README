@@ -1,0 +1,73 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+L2: HTTP Client
+
+Programs:
+l2_client.c - HTTP client
+l2_server.c - HTTP server
+mongoose_server.c - implementation of l2_server.c using mongoose library
+utilities.c / utilities.h - wrappers for malloc, realloc
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc and run through terminal, optimally with similar environment
+information as listed above.
+
+l2_client.c
+Compiling: gcc -ol2_client -pthread l2_client.c csapp.c utilities.c
+Running:   ./l2_client -h <HOST> -f <FILE> (-p <PORT>)    (Default port 80)
+Ex:        ./l2_client -h www.google.com -f /index.html
+
+NOTE: The initial / for -f is NECESSARY.
+
+l2_server.c
+Compiling: gcc -ol2_server -pthread l2_server.c csapp.c utilities.c
+Running:   ./l2_server -p <PORT> (&)          (& will run it in background)
+
+To connect to it with l2_client, use -h 127.0.0.1 and -p <PORT>
+NOTE: Files will be fetched from wherever you run the server, from the root
+through subdirectories. Requests to parent folders will be blocked.
+
+If a directory is requested, the server will try to locate index.html and
+return that if it exists. Otherwise it will return an appropriate error.
+
+mongoose_server.c
+Compiling: gcc -omongoose_server mongoose_server.c mongoose.c utilities.c
+Running:   ./mongoose_server -p <PORT> (&)
+
+Virtually identical to l2_server.c but using mongoose.h over csapp.h.
+Instructions for usage are the same as l2_server.
+
+Makefile:
+For compiling, run 'make l2_client', 'make l2_server', and 'make
+mongoose_server'. 'make test' will run three tests: one for client, one for
+server, and one for mongoose. Test results are in client.out, server.out, and
+mongoose.out files.
+
+You can run 'make all' to do all the compiling and testing in one command. Use
+'make clean' to remove all compiled files and test files. Run 'make view' to
+open all relevant code in a pager.
+
+NOTE: Occasionally the tests fail, usually due to a timing issue (ex: a server
+might open a port and a client might fail to connect as the client command ran
+too soon after the server command, before the port became ready). Just re-run
+the test, this is a test issue not a code issue.
+
+Testing:
+Most testing was done through gdb. At times, I had to run multiple ssh
+sessions to debug the server application. Used Valgrind as well, primarily
+just to clean up memory leaks.
+
+Difficulties:
+I had some trouble initially figuring out how to set up the client as it would
+request for too much data from the socket and cause a blocking read. Reading
+from sockets was new to me, but once I properly coded the client according to
+the HTTP protocol, it worked out fine.
+
+Suggestions for improvement:
+None come to mind. This was a fair assignment.

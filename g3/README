@@ -1,0 +1,64 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+G3: IPC Four-in-a-Row
+
+Programs:
+g3.c - main program, run four-in-a-row games with parent, child
+game.c, game.h - library for game, board, move structs. handle board algos.
+utilities.c, utilities.h - miscellaneous useful functions
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc.
+gcc -og3 g3.c game.c utilities.c
+
+Runtime:
+Run with two args, or use the makefile.
+./g3 <GAMES> <DIMENSION>
+
+Makefile:
+make build - compile all code
+GAMES=# DIMENSION=# make run - compile and run everything
+make test - compile and run tests, output to test#.out files
+make clean - clean all executable files and test files
+make view - open all code in a pager
+
+Implementation:
+Board functionality was abstracted out to a struct and modularized
+accordingly. Child always plays random. The parent uses an implementation of
+minimax called negamax to determine a best move. My implementation is not
+perfect (it does occasionally make a weird move) but it does play well against
+the child. 
+
+Parent, child both maintain their own board and use Unix I/O to send their
+moves to each other through pipes. Since pipes are limited in how many bytes
+you can transfer at a time, it made sense to transfer the move and not the
+entire board. The board can vary in size and transferring the entire board
+brings some memory concerns along with too much data (you really don't need to
+transfer spaces that are unaltered). 
+
+The parent, child both mimic a structure where they get the opponent's move,
+copy it to their board, make a move, and then send it back. Both players check
+win/tie conditions to know when to stop playing.
+
+The convenience of this is that I only have to send two ints over the pipes
+each time, for a fixed buffer size. This is also convenient as I can point a
+move struct over a char array on the stack. I can modify the move struct and
+this will modify the char buffer in-place. It's a little hacky, but that's a
+benefit of using C.
+
+Testing:
+I'm getting very good at writing in C so I did not have to do much this time
+in terms of testing. Used Valgrind to check for any memory leaks.
+
+Difficulties:
+None.
+
+Suggestions for improvement:
+Explain game requirements a little more. I know that programming an algorithm
+for the parent was optional but did it anyway for fun.

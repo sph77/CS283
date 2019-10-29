@@ -1,0 +1,178 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+G1: Mini Database Engine
+
+Programs:
+database.h - database header, contains structs for database, table, record
+database.c - interface for all database related functionality
+utilities.h - header for miscellaneous useful functions
+utilities.c - interface for miscellaenous functions
+g1.c - main entry point, handles input, determines what functions to run
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc and run through terminal, optimally with similar environment
+information as listed above.
+
+gcc -og1 g1.c database.c utilities.c
+./g1 <DATABASE>
+
+where <DATABASE> is the name of your db file. If the db file does not exist,
+g1 will create it when run.
+
+Runtime:
+You will be prompted with "Enter query: " on stdin. Enter SQL commands, with
+a newline (ENTER) to end each. Each command will be run immediately after
+being entered.
+
+This program supports all seven specified queries:
+- SELECT WHERE
+- DELETE
+- UPDATE
+- SELECT JOIN
+- INSERT
+- CREATE
+- DROP
+
+Do NOT enter malformed queries. The program is design to handle properly
+written input - this is hardcoded through strtok(). Some of the queries could
+be simplified with scanf() but others that take variable field input would
+not work well. So I decided to use strtok() for all queries.
+
+As a result fields can only be one word each (so Field1 but not Field 1) and
+values MUST be wrapped in quotations, "like this". The benefit here is that
+values can hold spaces.
+
+To quit, enter CTRL+D. The program will run the final command (if it exists)
+and then write the updates to the database file.
+
+Database File Format:
+I'm using a custom byte-based file format for my database. It has the
+convienience of being simple in terms of size and layout, and works well
+when loading into a linked list of structs.
+
+Each db is one file, named after the name of the db. Every line of the file
+is a table - this means that tables are delimited by newlines (\n). The first
+bytes in the line (4 or 8 depending on platform) are an int indicating how
+many fields are stored in the table. The line is then followed by a series
+of strings, with each string terminated by \0 (strings are delimited by the
+null terminator). The first string in the line is the table name. If there
+are N fields, then the next N strings are the field names. After that,
+the line lists every single database entry. Every N consecutive entries is
+a record (row of entries). 
+
+Here is a (rough) example of a db:
+
+1Table0\0Field1\0\n
+2Table1\0Field1\0Field2\0Value1\0Value2\0Value3\Value4\0\n
+3Table2\0Field1\0Field2\0Field3\0Value1\0Value2\0Value3\0\n
+(EOF)
+
+This is a db holding three tables. The first table has 1 field and is named
+"Table0". It has a field "Field1" and no record. Here is how that table would
+look:
+
+Table0
+---------
+Field1
+---------
+
+The second table has 2 fields and is named "Table1". It has two records. Here
+is how that table would look:
+
+Table1
+-------------
+Field1|Field2
+Value1|Value2
+Value3|Value4
+-------------
+
+The third table has 3 fields and is named "Table2". It has one record.
+
+Table2
+--------------------
+Field1|Field2|Field3
+Value1|Value2|Value3
+--------------------
+
+Implementation Details:
+The implementation I chose is based on a similar project I did during my last
+co-op. Except there, I was reading network data and serializing it to a class
+using C#. So, there are some slight differences with C that I had to deal
+with.
+
+The program reads in the db (if it exists) and builds a struct for it.
+The struct is comprised of three layers: database, tables, and records.
+
+The database layer contains the filepath (to remember where to save it to),
+and a doubly linked list of tables. Each table holds its name, the number of
+fields, the array of fields, and a doubly linked list of records. Each record
+holds an array of entries.
+
+Heavy modularization was done to separate the database interface from the
+query parsing. g1.c mostly does query parsing, and passes the parsed results
+to the respective database command. The database command then locates the
+correct table and passes the data to a table command, which then operates on a
+per-record level.
+
+As a result, there are far more functions for this assignment than I expected
+to initially write, but they come with the benefit of being reusable and
+helping to make the code clean and efficient.
+
+When the user is done with queries, the database is written back to the file
+by iterating through the different linked list levels. We then do another
+iteration afterwards to free the entire structure, which is stored entirely on
+the heap.
+
+Makefile:
+The makefile includes some commands to compile, run, test and view.
+- make all : compile g1 and run it. Specify DB=<NAME> to choose a name for
+  your db to create/open. If no name is specified, it will default to
+  DB=database.db.
+- make g1 : compile code to ./g1
+- make run : virtually identical to make all
+- make test : compile g1 (if not done already) and run some test commands.
+  test commands are stored in ./testcmds. you can edit these for your own
+  convenience, or you can pipe in your own input. ./g1 <DATABASE> < <INPUT>
+  test database is stored at test.db
+- make clean : remove g1, database.db, adn test.db if they exist
+- make view : open all relevant code in a pager
+
+Testing:
+Requirements, modularization, and necessary functionality were scoped out and
+revised numerous times initially to determine if the interface provided would
+be sufficient for the tasks assigned. Once a suitable interface was chosen, I
+implemented the majority of it (~90%). Initial testing was done through gdb to
+determine function-by-function which queries worked and which did not.
+
+Once all queries were working successfully, I used Valgrind to inspect and
+find any memory leaks or uninitialized heap memory. From there, I fixed any
+problems found, and kept testing with Valgrind until Valgrind did not detect
+any more memory leaks.
+
+Difficulties:
+I learned much about how C handles memory through this assignment. Initially,
+I was directly assigning values to strings (char*) through =. My database
+entries kept changing in memory and I realized that this was because I did not
+actually allocate space; I had to rewrite all of this statements to use
+strcpy() instead.
+
+I also learned that it is important to initialize pointers to NULL. Some of my
+malloc() and realloc() calls were breaking because the pointer was not
+initialized.
+
+The final thing that I took away from this assignment is to only use free() on
+pointers allocated on the heap. I was able to reduce heap usage to only the
+database and a few functions, saving on total memory load, and maintaining an
+equal balance of calls to malloc() and free().
+
+Suggestions for improvement:
+Not really any that I can think of. The only problem I had was that I
+initially assumed that a database contains one table. I had to re-read the
+assignment to realize that a database can hold multiple tables, and as a
+result I had to rewrite most of my functions.

@@ -1,0 +1,93 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+G2: RSA Chat Program
+
+Programs:
+server.c - RSA chat server
+client.c - RSA chat client
+genkey.c - RSA public/private key generator
+keycrack.c - RSA public key cracker
+rsa.h, rsa.c - Implementation of required RSA functions
+utilities.h, utilities.c - safe wrappers for certain functions
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc and run through terminal, optimally with similar environment
+information as listed above. Use -pthread to link pthread library and -lm to
+link math library. Or, use the makefile commands, which will compile for you.
+
+Runtime:
+Use the makefile commands. Or, use these.
+./server -p <PORT> -e "<PARTNER'S PUBLIC KEY>" -d "<YOUR PRIVATE KEY>"
+./client -s <SERVER> -p <PORT> -e "<PARTNER'S PUBLIC KEY>" -d "<YOUR PRIVATE KEY>"
+./genkey <MPRIME> <NPRIME>
+./keycrack <PUBLIC KEY>
+
+Makefile:
+Use the commands as provided from the website.
+MPRIME=# NPRIME=# make genkey
+E=# C=# make keycrack
+PORT=# E=# C=# D=# DC=# make server
+SERVER=# PORT=# E=# C=# D=# DC=# make client
+
+Run server, client on same host, same port, in separate terminals (tmux?). 
+SERVER=127.0.0.1 works well.
+
+Some additional commands:
+make clean to clean all compiled files
+make view to view all code in a pager
+
+Protocol:
+rsa_t is defined in rsa.h as long - this type will define the size of an
+encrypted char. (Note, the typing here was done to make this changeable).
+Encrypted longs are sent through the socket. When received, one long is read
+and decrypted at a time. Once a long decodes to a null terminator, or a 0
+value is read, stop reading and print to screen.
+
+Implementation Details:
+Server, client are both multithreaded with pthread. One thread for read, one
+for write for each. Generally, the flow is read -> encrypt -> send -> receive
+   -> decrypt -> display. 
+
+genkey works by starting at a random base and generating N primes away from
+the base - did not want to default at base 2 as this isn't as fun, or secure.
+So you will see different results each time you run it. The keys are generally
+big but not that large. I'd recommend against generating huge keys as they
+take a long time to encrypt/decrypt - you might think your program is frozen
+because the encoding is slow.
+
+keycrack runs in linear time - for large keys, it will take a long time.
+
+rsa.c abuses many fast algorithms found online (and cited). For coprime
+numbers, the number is generated in a range of 2*x to 4*x the size of the
+given input - this is done to not generate a coprime so huge, that
+encryption/decryption takes forever.
+
+WARNING - if you run genkey and get a negative value anywhere, re-run it. This
+is an overflow problem, and is rare, but can happen.
+
+The keycrack does not actually intercept network traffic. You could do so by
+using pcap but I have been told that this is outside the requirements scope.
+
+Testing:
+gdb, valgrind were used sparingly, but for the most part this did not really
+require much testing. A fair amount of the code was taken from l2 and rsa code
+was cited from appropriate resources.
+
+Difficulties:
+I was stuck for a bit as valgrind kept detecting memory leaks when creating
+pthreads, but was eventually told that this is a side-effect that I can
+ignore. There were some problems with larger RSA keys taking forever or
+causing overflow issues, so I had to add some limits on key size for the sake
+of testing. Running the programs with the example keys provided on the course
+website helped a lot in verifying that the encryption was implemented
+correctly.
+
+Suggestions for improvement:
+Make it clear how the protocol should be defined - be exact. Provide more test
+cases to verify RSA implementation.

@@ -1,0 +1,32 @@
+CREATE TABLE Summer19 FIELDS [ID, Subject, Name, Instructor]
+INSERT INTO Summer19 (ID="21")
+INSERT INTO Summer19 (ID="0", Subject="CS 260", Name="Data Structures", Instructor="Kurt Schmidt")
+INSERT INTO Summer19 (ID="1", Subject="CS 260", Name="Data Structures", Instructor="Krzysztof Nowak")
+INSERT INTO Summer19 (ID="2", Subject="CS 260", Name="Data Structures", Instructor="Mark Boady")
+INSERT INTO Summer19 (ID="3", Subject="CS 265", Name="Advanced Programming Tools and Techniques", Instructor="Bill Mongan")
+INSERT INTO Summer19 (ID="?", Subject="CS 266", Name="Extreme Programming Tools and Techniques", Instructor="Kurt Schmidt")
+INSERT INTO Summer19 (Instructor="Mark Boady")
+INSERT INTO Summer19 (ID="4", Subject="CS 270", Name="Mathematical Foundations of Computer Science", Instructor="Mark Boady")
+INSERT INTO Summer19 (ID="5", Subject="CS 275", Name="Web and Mobile App Development", Instructor="David Augenblick")
+INSERT INTO Summer19 (ID="6", Subject="CS 283", Name="Systems Programming", Instructor="Bill Mongan")
+SELECT * FROM Summer19 WHERE Instructor="Mark Boady"
+SELECT * FROM Summer19 WHERE Subject="CS 260"
+SELECT * FROM Summer19 WHERE ID="?"
+UPDATE Summer19 SET ID="100" WHERE Subject="CS 260"
+UPDATE Summer19 SET Instructor="William Mongan" WHERE Instructor="Bill Mongan"
+DELETE FROM Summer19 WHERE Instructor="Kurt Schmidt"
+SELECT * FROM Summer19 WHERE Instructor="Kurt Schmidt"
+SELECT * FROM Summer19 WHERE Subject="CS 260"
+SELECT * FROM Summer19 WHERE Instructor="Bill Mongan"
+SELECT * FROM Summer19 WHERE Instructor="William Mongan"
+CREATE TABLE DeleteME FIELDS [Name, FavoriteFlavorOfIceCream]
+INSERT INTO DeleteME (Name="Mark Boady", FavoriteFlavorOfIceCream="Chocolate")
+INSERT INTO DeleteME (Name="William Mongan", FavoriteFlavorOfIceCream="Vanilla")
+INSERT INTO DeleteME (Name="William Mongan", FavoriteFlavorOfIceCream="Strawberry")
+INSERT INTO DeleteME (Name="Kurt Schmidt", FavoriteFlavorOfIceCream="Bash Flavor")
+SELECT * FROM DeleteME WHERE Name="Kurt Schmidt"
+SELECT * FROM Summer19 JOIN DeleteME WHERE Summer19.Instructor=DeleteME.Name
+SELECT * FROM DeleteME JOIN Summer19 WHERE Summer19.Instructor=DeleteME.Name
+DELETE FROM DeleteME WHERE Name="William Mongan"
+SELECT * FROM Summer19 JOIN DeleteME WHERE DeleteME.Name=Summer19.Instructor
+DROP TABLE DeleteME

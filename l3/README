@@ -1,0 +1,291 @@
+Stephen Hansen (UserID sph77)
+CS 283, Summer 2019
+L3: Concurrent Intro
+
+----------------------------------------------
+ANALYSIS:
+Running bash time utility on each program:
+
+-- stadium_nomutex
+
+1.
+BOOM! counter = 99753
+
+real	0m0.012s
+user	0m0.004s
+sys	0m0.013s
+
+2.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.015s
+
+3.
+BOOM! counter = 98097
+
+real	0m0.012s
+user	0m0.000s
+sys	0m0.018s
+
+4.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.000s
+sys	0m0.017s
+
+5.
+BOOM! counter = 98524
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.016s
+
+6.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.017s
+
+7.
+BOOM! counter = 99715
+
+real	0m0.012s
+user	0m0.006s
+sys	0m0.012s
+
+8.
+OK    counter = 100000
+
+real	0m0.010s
+user	0m0.000s
+sys	0m0.015s
+
+9.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.000s
+sys	0m0.017s
+
+10.
+BOOM! counter = 98827
+
+real	0m0.012s
+user	0m0.003s
+sys	0m0.015s
+
+AVERAGE RUNTIME (user + sys) : 0.0168s
+AVERAGE COUNTER : 99491.6
+
+-- stadium_mutexinsidefor
+
+1.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.006s
+sys	0m0.016s
+
+2.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.008s
+sys	0m0.017s
+
+3.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.000s
+sys	0m0.024s
+
+4.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.006s
+sys	0m0.017s
+
+5.
+OK    counter = 100000
+
+real	0m0.016s
+user	0m0.000s
+sys	0m0.041s
+
+6.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.000s
+sys	0m0.021s
+
+7.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.008s
+sys	0m0.017s
+
+8.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.003s
+sys	0m0.041s
+
+9.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.005s
+sys	0m0.017s
+
+10.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.006s
+sys	0m0.017s
+
+AVERAGE RUNTIME (user + sys) : 0.027s
+AVERAGE COUNTER : 100000
+
+-- stadium_mutexoutsidefor
+
+1.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.004s
+sys	0m0.011s
+
+2.
+OK    counter = 100000
+
+real	0m0.010s
+user	0m0.005s
+sys	0m0.010s
+
+3.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.016s
+
+4.
+OK    counter = 100000
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.016s
+
+5.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.004s
+sys	0m0.014s
+
+6.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.000s
+sys	0m0.019s
+
+7.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.000s
+sys	0m0.020s
+
+8.
+OK    counter = 100000
+
+real	0m0.013s
+user	0m0.004s
+sys	0m0.015s
+
+9.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.000s
+sys	0m0.018s
+
+10.
+OK    counter = 100000
+
+real	0m0.012s
+user	0m0.000s
+sys	0m0.017s
+
+AVERAGE RUNTIME (user + sys) : 0.0173s
+AVERAGE COUNTER : 100000
+
+CONCLUSION :
+
+1. stadium_nomutex 0.0168s avg -- fastest program
+2. stadium_mutexoutsidefor 0.0173s avg
+3. stadium_mutexinsidefor 0.027s avg -- slowest program
+
+stadium_nomutex has a race condition due to no locking when interfacing with a
+global variable; both stadium_mutexoutsidefor and stadium_mutexinsidefor fix
+this problem.
+
+stadium_nomutex is the fastest program as it does not waste any time on mutex
+locks. stadium_mutexinsidefor is the slowest as it uses the lock the most -
+100000 times, once for every single increment. Compare that to
+stadium_mutexoutsidefor, which only locks once per thread - 100 times to lock
+instead of 100000 times
+
+---------------------------------------------------------
+
+Programs:
+stadium_NOMUTEX.c - simulate a stadium counter, without locks
+stadium_MUTEXINSIDEFOR.c - simulate a stadium counter, lock inside for loop
+stadium_MUTEXOUTSIDEFOR.c - simulate a stadium counter, lock outside for loop
+
+Environment information:
+Run on Tux, wrote with Vim (tabstop=3, expandtab).
+OS : Linux 4.15.0-51-generic (x86_64 x86_64 x86_64 GNU/Linux, Ubuntu 18.04.2 LTS)
+shell : GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)
+gcc : gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0 
+
+Requirements:
+Compile with gcc and -pthread argument to link pthread library. Ex:
+gcc -ostadium_nomutex -pthread stadium_NOMUTEX.c
+gcc -ostadium_mutexinsidefor -pthread stadium_MUTEXINSIDEFOR.c
+gcc -ostadium_mutexoutsidefor -pthread stadium_MUTEXOUTSIDEFOR.c
+
+Runtime:
+No arguments necessary to run. Just run them straight, or use the Makefile.
+./stadium_nomutex
+./stadium_mutexinsidefor
+./stadium_mutexoutsidefor
+
+Use bash time utility to time them.
+
+Makefile:
+make compile - compile all code
+make run - compile and run everything
+make time - compile and time everything
+make clean - clean all executable files
+make view - open all code in a pager
+
+Testing:
+No testing necessary for this assignment, pulled from examples in slides.
+
+Difficulties:
+None.
+
+Suggestions for improvement:
+None come to mind.

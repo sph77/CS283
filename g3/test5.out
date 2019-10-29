@@ -1,0 +1,510 @@
+GAME 1: Parent placed X at position 19, 13
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             X      
+--------------------
+GAME 2: Parent placed X at position 19, 13
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             X      
+--------------------
+GAME 1: Child placed O at position 19, 6
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O      X      
+--------------------
+GAME 1: Parent placed X at position 19, 14
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O      XX     
+--------------------
+GAME 2: Child placed O at position 19, 6
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O      X      
+--------------------
+GAME 2: Parent placed X at position 19, 12
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O     XX      
+--------------------
+GAME 1: Child placed O at position 19, 11
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O    O XX     
+--------------------
+GAME 1: Parent placed X at position 19, 15
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O    O XXX    
+--------------------
+GAME 2: Child placed O at position 19, 11
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      O    OXX      
+--------------------
+GAME 2: Parent placed X at position 18, 12
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+      O    OXX      
+--------------------
+GAME 1: Child placed O at position 18, 13
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             O      
+      O    O XXX    
+--------------------
+GAME 1: Parent placed X at position 19, 19
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             O      
+      O    O XXX   X
+--------------------
+GAME 2: Child placed O at position 18, 13
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            XO      
+      O    OXX      
+--------------------
+GAME 2: Parent placed X at position 19, 15
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            XO      
+      O    OXX X    
+--------------------
+GAME 1: Child placed O at position 19, 0
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             O      
+O     O    O XXX   X
+--------------------
+GAME 1: Parent placed X at position 19, 16
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             O      
+O     O    O XXXX  X
+--------------------
+GAME 1: Parent wins!
+GAME 2: Child placed O at position 19, 0
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            XO      
+O     O    OXX X    
+--------------------
+GAME 2: Parent placed X at position 17, 12
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+            XO      
+O     O    OXX X    
+--------------------
+GAME 2: Child placed O at position 19, 7
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+            XO      
+O     OO   OXX X    
+--------------------
+GAME 2: Parent placed X at position 19, 18
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+            XO      
+O     OO   OXX X  X 
+--------------------
+GAME 2: Child placed O at position 19, 4
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+            XO      
+O   O OO   OXX X  X 
+--------------------
+GAME 2: Parent placed X at position 16, 12
+--------------------
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            X       
+            X       
+            XO      
+O   O OO   OXX X  X 
+--------------------
+GAME 2: Parent wins!
+Child 10151 terminated with exit status 0
+Child 10153 terminated with exit status 0
